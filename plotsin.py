@@ -16,19 +16,18 @@ def plotf(f, a, b):
     y = [f(i) for i in x]
     plt.plot(x, y)
 
-    plt.xlabel("x")
-    plt.ylabel(r"$xsin(x) - x^2$")
 
-    plt.title("Wykres funkcji")
-
-    plt.show()
-
-
-def fun(x):
+def sinus(x):
     return x * m.sin(x) - x ** 2
 
 
 a = int(input("a = "))
 b = int(input("b = "))
 
-plotf(fun, a, b)
+plotf(sinus, a, b)
+plt.xlabel("x")
+plt.ylabel(r"$xsin(x) - x^2$")
+
+plt.title("Wykres funkcji")
+
+plt.show()
