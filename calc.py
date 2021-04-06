@@ -64,7 +64,7 @@ while True:
         break
 
     notacja = onp(d)  # zamiana normalnej notacji na ONP
-
+    print(notacja)
     # obliczanie wartości:
 
     stos = []
@@ -72,7 +72,7 @@ while True:
     for i in notacja:
         if isinstance(i, float):
             stos.append(i)
-        else:
+        elif i == '+' or i == '-' or i == '*' or i == '/' or i == '^':
             a = stos.pop()
             b = stos.pop()
             if i == '+':
@@ -85,9 +85,11 @@ while True:
                 stos.append(b / a)
             elif i == '^':
                 stos.append(b ** a)
-            elif i == 'sin':
-                stos.append(m.sin(a))
-            elif i == 'cos':
-                stos.append(m.cos(a))
+        elif i == 'sin':
+            a = stos.pop()
+            stos.append(m.sin(a))
+        elif i == 'cos':
+            a = stos.pop()
+            stos.append(m.cos(a))
 
     print(stos[0])
