@@ -6,9 +6,7 @@ def is_number(s):
         float(s)
         return True
     except ValueError:
-        pass
-
-    return False
+        return False
 
 
 def pre(n):
