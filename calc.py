@@ -64,7 +64,7 @@ while True:
         break
 
     notacja = onp(d)  # zamiana normalnej notacji na ONP
-    print(notacja)
+
     # obliczanie wartości:
 
     stos = []
