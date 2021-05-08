@@ -1,24 +1,21 @@
-import numpy as np
-import matplotlib.pyplot as plt
 import sys
 
-# sprawdzanie rodzaju i ilości argmuentów
+import matplotlib.pyplot as plt
+import numpy as np
+
+# sprawdzanie ilości i rodzaju argmuentów
 
 if len(sys.argv) != 4:
     sys.exit("Zła liczba argumentów.")
 try:
     number = int(sys.argv[1])
-    state_string = sys.argv[2]
+    state = np.array(list(sys.argv[2]))
     steps = int(sys.argv[3])
 except:
     sys.exit("Zły rodzaj argumentów.")
 
-# zamiana inital_state na np.array
 
-state = np.array(list(state_string))
-
-
-# funkcja przyporządkowująca tripletowi bit zasady
+# funkcja przyporządkowująca tripletowi numer bitu zasady
 
 def rule_index(triplet):
     sL, sC, sR = triplet
@@ -53,7 +50,7 @@ def CA_run(rule_number, initial_state, n_steps):
 
 # funkcja rysująca wynik
 
-plt.rcParams['image.cmap'] = 'binary'
+plt.rcParams['image.cmap'] = 'binary'  # szare kolory, można dać inne
 
 data = CA_run(number, state, steps)
 
